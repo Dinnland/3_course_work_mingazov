@@ -33,6 +33,7 @@ def load_start(path):
     """
     data = load_data_from_file(path)
     list_of_operations = []
+    # print(data)
     for operation in data:
         x = operation.get('state', '______')  # выборка по ключу 'state' из списка  go_list_of_operations.list_of_operations
         if x == 'EXECUTED' and x != None and x != '______':   # фильтр по выполненным (EXECUTED) операциям
@@ -61,10 +62,25 @@ def load_start(path):
                     )
                 )
             # list_of_operations.append(operation.get('from','________'))
-
-
-
     return list_of_operations
+
+def load_start_2(path):
+    """
+    без класса
+    :param path:
+    :return:
+    """
+    data = load_data_from_file(path)
+    list_of_operations = []
+    # print(data)
+    for operation in data:
+        x = operation.get('state','______')  # выборка по ключу 'state' из списка  go_list_of_operations.list_of_operations
+        if x == 'EXECUTED' and x != None and x != '______':  # фильтр по выполненным (EXECUTED) операциям
+
+            list_of_operations.append(operation)
+    return list_of_operations
+
+
 
 
     # list_of_operations.append(
