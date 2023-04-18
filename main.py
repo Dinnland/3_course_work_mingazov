@@ -21,11 +21,13 @@ from utils import *
 
 def main():
     path = 'operations.json'
-    go_list_of_operations = load_start(path)    # загрузка данных
-    print(go_list_of_operations)   ### это для понимаяния вывод, он не нужен так
+    go_list_of_operations = load_start_2(path)    # загрузка данных
+    # print(go_list_of_operations)   ### это для понимаяния вывод, он не нужен так
 
+    # ↓ сортировка по дате ↓
+    sorted_list = sorted(go_list_of_operations, key=lambda date: date['date'], reverse=True)
 
-
+    print((sorted_list[0:5]))   # 5 последних операций
 
     # for operation in go_list_of_operations:
     #     x = operation.get('state', None)    # выборка по ключу 'state' из списка  go_list_of_operations.list_of_operations
