@@ -1,6 +1,6 @@
 # Основной файл
 
-from utils2 import *
+from utils.utils import *
 path = 'operations.json'
 
 
